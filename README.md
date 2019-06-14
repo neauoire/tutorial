@@ -1,18 +1,18 @@
 # Tutorial
 
-This is a crash-course tutorial to get started with Norns development.
+This is a crash-course tutorial to get started with Norns development, follow the discussion [here](https://llllllll.co/t/norns-tutorial/23241).
 
 ## Connection
 
 You need to get the [Norns](https://monome.org/norns/) online and **accessible to your WIFI network**.
 
 - Add your router details to the device, in `WIFI > ADD`. 
-- Once the device is online, the `IP` field will display the _DEVICE_IP_, example `192.168.128.109`.
+- Once the device is online, the `IP` field will display the _Norns's IP_, example `192.168.128.109`.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/0_wifi.png?raw=true' width='450'/>
 
 - **To edit code(IDE)**, open [Maiden](http://norns.local/maiden/) by going `http://norns.local/` in your browser.
-- **To transfer files(SFTP)**, open your [SFTP client](https://cyberduck.io/download/) and connect to the _DEVICE_IP_, username `we` and password `sleep`.
+- **To transfer files(SFTP)**, open your [SFTP client](https://cyberduck.io/download/) and connect to the _Norns's IP_, username `we` and password `sleep`.
 - **To install new projects(SSH)**, open a [new terminal window](https://www.youtube.com/watch?v=IGmfU6QU5dI), type `ssh we@192.168.128.109`, password `sleep`.
 
 You are now connected to the device, via the IDE, FTP and SSH. 
@@ -35,6 +35,8 @@ In [Maiden](http://norns.local/maiden/), reload the window to make sure the tuto
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Look at the blank screen**, there is nothing to see.
 - **Look at the logs**, at the bottom of the browser window in the console, it should display `init` and `redraw`.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/1_basics.png?raw=true' width='450'/>
 
 You have run your first Norns script, from Github, via Maiden.
 

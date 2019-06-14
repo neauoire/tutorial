@@ -1,4 +1,4 @@
-# tutorial
+# Tutorial
 
 This is a crash-course tutorial to get started with Norns development.
 
@@ -6,7 +6,7 @@ This is a crash-course tutorial to get started with Norns development.
 
 You need to get the Norns **online and accessible to the network**.
 
-- Add your router details in `WIFI > ADD`. 
+- Add your router details to the device, in `WIFI > ADD`. 
 - Once the device is online, the `IP` field will display the _DEVICE_IP_, example `192.168.128.109`.
 - **IDE**, open [Maiden](http://norns.local/maiden/) — to edit code.
 - **FTP**, open your [SFTP client](https://cyberduck.io/download/), connect to the _DEVICE_IP_, username `we` and password `sleep` — to transfer files.

@@ -74,35 +74,35 @@ function draw_frame()
 end
 
 function draw_labels()
+  line_height = 8
   screen.level(1)
-  screen.move(5,viewport.height - 4)
+  screen.move(5,viewport.height - (line_height * 1))
   screen.text('note')
-  screen.move(5,viewport.height - 10)
+  screen.move(5,viewport.height - (line_height * 2))
   screen.text('ch')
-  screen.move(5,viewport.height - 16)
+  screen.move(5,viewport.height - (line_height * 3))
   screen.text('vel')
-  screen.move(5,viewport.height - 24)
+  screen.move(5,viewport.height - (line_height * 4))
   screen.text('type')
-  screen.move(5,viewport.height - 36)
-  screen.text('midi')
 end
 
 function draw_event(event)
+  line_height = 8
   screen.level(10)
   if event.note then
-    screen.move(30,viewport.height - 4)
+    screen.move(30,viewport.height - (line_height * 1))
     screen.text(msg.note)
   end
   if event.ch then
-    screen.move(30,viewport.height - 10)
+    screen.move(30,viewport.height - (line_height * 2))
     screen.text(msg.ch)
   end
   if event.vel then
-    screen.move(30,viewport.height - 16)
+    screen.move(30,viewport.height - (line_height * 3))
     screen.text(msg.vel)
   end
   if event.type then
-    screen.move(30,viewport.height - 24)
+    screen.move(30,viewport.height - (line_height * 4))
     screen.text(msg.type)
   end
 end

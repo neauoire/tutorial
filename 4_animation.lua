@@ -59,7 +59,8 @@ function draw_wave()
 end
 
 function draw_label()
-  screen.move(5,viewport.height - 4)
+  line_height = 8
+  screen.move(5,viewport.height - (line_height * 1))
   screen.text(amplitude..':'..rate)
 end
 

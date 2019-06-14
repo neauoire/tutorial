@@ -1,4 +1,6 @@
--- PassThru Test
+-- scriptname: tutorial part 6
+-- v1.0.0 @neauoire
+-- llllllll.co/t/norns-tutorial/23241
 
 engine.name = 'InputTutorial'
 

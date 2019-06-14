@@ -1,6 +1,6 @@
 -- scriptname: tutorial part 2
 -- v1.0.0 @neauoire
--- llllllll.co/t/22222
+-- llllllll.co/t/norns-tutorial/23241
 
 local viewport = { width = 128, height = 64, frame = 0 }
 local amplitude = 10

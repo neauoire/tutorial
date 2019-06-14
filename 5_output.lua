@@ -1,6 +1,6 @@
 -- scriptname: tutorial part 5
 -- v1.0.0 @neauoire
--- llllllll.co/t/22222
+-- llllllll.co/t/norns-tutorial/23241
 
 engine.name = 'OutputTutorial'
 

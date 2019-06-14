@@ -9,7 +9,7 @@ You need to get the [Norns](https://monome.org/norns/) online and **accessible t
 - Add your router details to the device, in `WIFI > ADD`. 
 - Once the device is online, the `IP` field will display the _DEVICE_IP_, example `192.168.128.109`.
 
-<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/wifi.png?raw=true' width='450'/>
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/0_wifi.png?raw=true' width='450'/>
 
 - **To edit code(IDE)**, open [Maiden](http://norns.local/maiden/) by going `http://norns.local/` in your browser.
 - **To transfer files(SFTP)**, open your [SFTP client](https://cyberduck.io/download/) and connect to the _DEVICE_IP_, username `we` and password `sleep`.
@@ -46,7 +46,7 @@ In [Maiden](http://norns.local/maiden/), look at the second example file of this
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Look at the screen**, notice the basic lines being drawn.
 
-
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/2_interface.png?raw=true' width='450'/>
 
 ## Interaction
 

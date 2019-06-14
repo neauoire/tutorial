@@ -72,7 +72,7 @@ In [Maiden](http://norns.local/maiden/), look at the [third example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/3_interaction.png?raw=true' width='450'/>
 
-The interactions are triggering the `key(id,state)` and `enc(id,delta)` functions, remember to `redraw` the interface after an interaction. The key state is a value of either `1`(key_down), or `0`(key_ip). The knobs delta is a value of either `-1`(counter_clockwise), or `1`(clockwise).
+The interactions are triggering the `key(id,state)` and `enc(id,delta)` functions, remember to `redraw` the interface after an interaction. The key state is a value of either `1`(key_down), or `0`(key_up). The knobs delta is a value of either `-1`(counter_clockwise), or `1`(clockwise).
 
 ```
 function key(id,state)

@@ -48,6 +48,15 @@ In [Maiden](http://norns.local/maiden/), look at the second example file of this
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/2_interface.png?raw=true' width='450'/>
 
+The interface is draw by a combination of methods from the [screen object](https://monome.github.io/norns/doc/modules/screen.html). The screen always must be cleared, and updated between changes. 
+
+```
+screen.clear()
+screen.move(10,10)
+screen.line(30,30)
+screen.update()
+```
+
 ## Interaction
 
 In [Maiden](http://norns.local/maiden/), look at the third example file of this tutorial.
@@ -58,6 +67,18 @@ In [Maiden](http://norns.local/maiden/), look at the third example file of this 
 - **Look at the screen**, notice the crosshair moving.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/3_interaction.png?raw=true' width='450'/>
+
+The interactions are triggering the `key(id,state)` and `enc(id,delta)` functions, remember to `redraw` the interface after an interaction. The key state is a value of either `1`(key_down), or `0`(key_ip). The knobs delta is a value of either `-1`(counter_clockwise), or `1`(clockwise).
+
+```
+function key(id,state)
+  print('key',id,state)
+end
+
+function enc(id,delta)
+  print('enc',id,delta)
+end
+```
 
 ## Creating a new project
 

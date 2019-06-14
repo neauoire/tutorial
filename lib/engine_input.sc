@@ -1,4 +1,4 @@
-Engine_Input : CroneEngine {
+Engine_InputTutorial : CroneEngine {
   var amp=0;
   var <synth;
 

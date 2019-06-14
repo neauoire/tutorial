@@ -1,4 +1,4 @@
-Engine_Output : CroneEngine {
+Engine_OutputTutorial : CroneEngine {
   var <synth;
 
   *new { arg context, doneCallback;

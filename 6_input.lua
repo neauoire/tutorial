@@ -2,6 +2,8 @@
 -- v1.0.0 @neauoire
 -- llllllll.co/t/22222
 
+engine.name = 'InputTutorial'
+
 local viewport = { width = 128, height = 64 }
 local focus = { x = 0, y = 0 }
 

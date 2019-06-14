@@ -12,6 +12,8 @@ You need to get the Norns **online and accessible to the network**.
 - **FTP**, open your [SFTP client](https://cyberduck.io/download/), connect to the _DEVICE_IP_, username `we` and password `sleep` — to transfer files.
 - **SSH**, Open a [new terminal window](https://www.youtube.com/watch?v=IGmfU6QU5dI), type `ssh we@192.168.128.109`, password `sleep` — to install new projects.
 
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/wifi.png?raw=true' width='450'/>
+
 Well, done. You are now connected to the device. 
 
 ## Setup

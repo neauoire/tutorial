@@ -14,23 +14,33 @@ function init()
   screen.aa(0)
   screen.line_width(1)
   -- Center focus
-  focus.x = viewport.width/2
-  focus.y = viewport.height/2
+  reset()
   -- Render
   redraw()
+end
+
+function reset()
+  print('reset')
+  focus.x = viewport.width/2
+  focus.y = viewport.height/2
 end
 
 -- Interactions
 
 function key(id,state)
   print('key',id,state)
+  reset()
+  redraw()
 end
 
 function enc(id,delta)
   print('enc',id,delta)
-  if id == 1 then
+  if id == 2 then
     focus.x = focus.x + delta
+  elseif id == 3 then
+    focus.y = focus.y + delta
   end
+  redraw()
 end
 
 -- Render
@@ -52,10 +62,22 @@ function draw_crosshair()
   screen.stroke()
 end
 
+function draw_position()
+  screen.move(5,viewport.height - 4)
+  screen.text(math.floor(focus.x)..','..math.floor(focus.y))
+end
+
 function redraw()
   print('redraw')
   screen.clear()
   draw_frame()
   draw_crosshair()
+  draw_position()
   screen.update()
+end
+
+-- Utils
+
+function clamp(val,min,max)
+  return val < min and min or val > max and max or val
 end

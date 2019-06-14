@@ -1,6 +1,6 @@
 # Tutorial
 
-This is a crash-course tutorial to get started with [Norns](https://monome.org/norns/) development, follow the discussion [here](https://llllllll.co/t/norns-tutorial/23241).
+This is a crash-course tutorial to get started with the sound computer [Norns](https://monome.org/norns/), follow the discussion [here](https://llllllll.co/t/norns-tutorial/23241). If you would like to contribute, visit the [repository](https://github.com/neauoire/tutorial).
 
 ## Connection
 
@@ -143,4 +143,4 @@ mix.vu = function(in1,in2,out1,out2)
 end
 ```
 
-I hope you enjoyed these simple examples, good luck!
+I hope you enjoyed these simple examples, **good luck**!

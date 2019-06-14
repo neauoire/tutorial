@@ -35,6 +35,7 @@ In [Maiden](http://norns.local/maiden/), reload the window to make sure the tuto
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Look at the blank screen**, there is nothing to see.
 - **Look at the logs**, at the bottom of the browser window in the console, it should display `init` and `redraw`.
+- This example is not interactive.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/1_basics.png?raw=true' width='450'/>
 
@@ -47,6 +48,7 @@ In [Maiden](http://norns.local/maiden/), look at the [second example file](https
 - **Navigate to the second example** with `code > tutorial > 2_interface.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Look at the screen**, notice the basic lines being drawn.
+- This example is not interactive.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/2_interface.png?raw=true' width='450'/>
 

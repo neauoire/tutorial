@@ -34,7 +34,21 @@ In [Maiden](http://norns.local/maiden/), reload the window to make sure the tuto
 - **Navigate to the first example** with `code > tutorial > 1_blank.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Look at the blank screen**, there is nothing to see.
-- **Look at the logs**, at the bottom of the browser window in the console.
+- **Look at the logs**, at the bottom of the browser window in the console, it should display `init` and `redraw`.
+
+You have run your first Norns script, from Github, via Maiden.
+
+## Interface
+
+In [Maiden](http://norns.local/maiden/), look at the second example file of this tutorial.
+
+- **Navigate to the second example** with `code > tutorial > 2_interface.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Look at the screen**, notice the basic lines being drawn.
+
+
+
+## Interaction
 
 In your ..
 

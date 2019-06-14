@@ -4,12 +4,11 @@
 
 engine.name = 'InputTutorial'
 
-local poll = require 'core/poll'
-local mix = require 'core/mix'
-
 local viewport = { width = 128, height = 64 }
-local signal = { in1 = 0, in2 = 0, out1 = 0, out2 = 0, _in1 = 0, _in2 = 0, _out1 = 0, _out2 = 0, _in1_max = 1, _out1_max = 1}
+local signal = { amp_in_l = 0, amp_out_l = 0, amp_in_l_max = 0, amp_out_l_max = 0 }
 local controls = { amp = 1.0 }
+local p_amp
+local refresh_rate = 30/1000
 
 function init()
   print('init')
@@ -21,35 +20,32 @@ function init()
   redraw()
   -- Listen
   audio.monitor_mono()
-  _norns.poll_start_vu()
-  norns.vu = mix.vu
   engine.amp(1.0)
+  -- Poll in
+  p_amp_in = poll.set("amp_in_l")
+  p_amp_in.time = refresh_rate
+  p_amp_in.callback = function(val) 
+    signal.amp_in_l = val
+    if signal.amp_in_l > signal.amp_in_l_max then 
+      signal.amp_in_l_max = signal.amp_in_l
+    end
+  end
+  -- Poll out
+  p_amp_out = poll.set("amp_out_l")
+  p_amp_out.time = refresh_rate
+  p_amp_out.callback = function(val) 
+    signal.amp_out_l = val
+    if signal.amp_out_l > signal.amp_out_l_max then 
+      signal.amp_out_l_max = signal.amp_out_l
+    end
+  end
+  p_amp_in:start()
+  p_amp_out:start()
 end
 
 function update()
   engine.amp(controls.amp)
   redraw()
-end
-
-mix.vu = function(in1,in2,out1,out2)
-  signal.in1 = in1
-  signal.in2 = in2
-  signal.out1 = out1 
-  signal.out2 = out2
-  -- Dampen
-  if signal.in1 > signal._in1 then
-    signal._in1 = signal.in1
-  else
-    signal._in1 = signal._in1 - 0.05
-  end
-  if signal.out1 > signal._out1 then
-    signal._out1 = signal.out1
-  else
-    signal._out1 = signal._out1 - 0.05
-  end
-  if signal.in1 > signal._in1_max then
-    signal._in1_max = signal.in1
-  end
 end
 
 -- Controls
@@ -119,8 +115,8 @@ function redraw()
   draw_frame()
   draw_controls()
   draw_label()
-  draw_uv(signal._in1,signal._in1_max,0)
-  draw_uv(signal._out1,signal._in1_max,5)
+  draw_uv(signal.amp_in_l,signal.amp_in_l_max,0)
+  draw_uv(signal.amp_out_l,signal.amp_out_l_max,5)
   screen.stroke()
   screen.update()
 end
@@ -134,7 +130,7 @@ end
 -- Interval
 
 re = metro.init()
-re.time = 30/1000
+re.time = refresh_rate
 re.event = function()
   redraw()
 end

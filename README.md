@@ -27,7 +27,7 @@ In your **terminal window**, while being connected via **SSH**.
 
 You are now ready to use this tutorial. 
 
-## Play
+## Basics
 
 In [Maiden](http://norns.local/maiden/), reload the window to make sure the tutorial files are visible, and look at the [first example file](1_blank.md) of this tutorial.
 
@@ -78,6 +78,28 @@ end
 function enc(id,delta)
   print('enc',id,delta)
 end
+```
+
+## Animation
+
+In [Maiden](http://norns.local/maiden/), look at the [fourth example file](4_animation.md) of this tutorial.
+
+- **Navigate to the second example** with `code > tutorial > 4_animation.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Change the animation modulation** by turning the two knobs to the right of the device.
+- **Look at the screen**, notice the screen being updated automatically.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/4_animation.png?raw=true' width='450'/>
+
+The animation loop uses the metro object, the `30/1000` time parameter sets the reload to the rate of `30fps`.
+
+```
+re = metro.init()
+re.time = 30/1000
+re.event = function()
+  redraw()
+end
+re:start()
 ```
 
 ## Creating a new project

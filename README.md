@@ -15,8 +15,6 @@ You need to get the [Norns](https://monome.org/norns/) online and **accessible t
 - **To transfer files(SFTP)**, open your [SFTP client](https://cyberduck.io/download/) and connect to the _DEVICE_IP_, username `we` and password `sleep`.
 - **To install new projects(SSH)**, open a [new terminal window](https://www.youtube.com/watch?v=IGmfU6QU5dI), type `ssh we@192.168.128.109`, password `sleep`.
 
-
-
 You are now connected to the device, via the IDE, FTP and SSH. 
 
 ## Setup
@@ -30,6 +28,13 @@ In your **terminal window**, while being connected via **SSH**.
 You are now ready to use this tutorial. 
 
 ## Play
+
+In [Maiden](http://norns.local/maiden/), reload the window to make sure the tutorial files are visible.
+
+- **Navigate to the first example** with `code > tutorial > 1_blank.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Look at the blank screen**, there is nothing to see.
+- **Look at the logs**, at the bottom of the browser window in the console.
 
 In your ..
 

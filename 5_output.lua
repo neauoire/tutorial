@@ -1,6 +1,8 @@
--- scriptname: tutorial part 2
+-- scriptname: tutorial part 5
 -- v1.0.0 @neauoire
 -- llllllll.co/t/22222
+
+engine.name = 'Output'
 
 local viewport = { width = 128, height = 64 }
 local focus = { x = 0, y = 0 }
@@ -35,6 +37,9 @@ end
 
 function enc(id,delta)
   print('enc',id,delta)
+  if n == 1 then
+    mix:delta("output", delta)
+  end
   if id == 2 then
     focus.x = clamp(focus.x + delta,6,123)
   elseif id == 3 then

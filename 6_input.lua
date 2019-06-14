@@ -7,8 +7,9 @@ engine.name = 'InputTutorial'
 local viewport = { width = 128, height = 64 }
 local signal = { amp_in_l = 0, amp_out_l = 0, amp_in_l_max = 0, amp_out_l_max = 0 }
 local controls = { amp = 1.0 }
-local p_amp
 local refresh_rate = 30/1000
+local p_amp_in
+local p_amp_out
 
 function init()
   print('init')
@@ -39,13 +40,16 @@ function init()
       signal.amp_out_l_max = signal.amp_out_l
     end
   end
-  p_amp_in:start()
-  p_amp_out:start()
 end
 
 function update()
   engine.amp(controls.amp)
   redraw()
+end
+
+function repoll()
+  p_amp_in:update()
+  p_amp_out:update()
 end
 
 -- Controls
@@ -132,6 +136,7 @@ end
 re = metro.init()
 re.time = refresh_rate
 re.event = function()
+  repoll()
   redraw()
 end
 re:start()

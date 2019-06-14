@@ -29,7 +29,7 @@ You are now ready to use this tutorial.
 
 ## Play
 
-In [Maiden](http://norns.local/maiden/), reload the window to make sure the tutorial files are visible.
+In [Maiden](http://norns.local/maiden/), reload the window to make sure the tutorial files are visible, and look at the [first example file](1_blank.md) of this tutorial.
 
 - **Navigate to the first example** with `code > tutorial > 1_blank.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
@@ -40,7 +40,7 @@ You have run your first Norns script, from Github, via Maiden.
 
 ## Interface
 
-In [Maiden](http://norns.local/maiden/), look at the second example file of this tutorial.
+In [Maiden](http://norns.local/maiden/), look at the [second example file](2_interface.md) of this tutorial.
 
 - **Navigate to the second example** with `code > tutorial > 2_interface.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
@@ -59,7 +59,7 @@ screen.update()
 
 ## Interaction
 
-In [Maiden](http://norns.local/maiden/), look at the third example file of this tutorial.
+In [Maiden](http://norns.local/maiden/), look at the [third example file](3_interaction.md) of this tutorial.
 
 - **Navigate to the second example** with `code > tutorial > 3_interface.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.

@@ -29,7 +29,7 @@ You are now ready to use this tutorial.
 
 ## Basics
 
-In [Maiden](http://norns.local/maiden/), reload the window to make sure the tutorial files are visible, and look at the [first example file](1_blank.md) of this tutorial.
+In [Maiden](http://norns.local/maiden/), reload the window to make sure the tutorial files are visible, and look at the [first example file](https://github.com/neauoire/tutorial/blob/master/1_blank.md) of this tutorial.
 
 - **Navigate to the first example** with `code > tutorial > 1_blank.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
@@ -40,7 +40,7 @@ You have run your first Norns script, from Github, via Maiden.
 
 ## Interface
 
-In [Maiden](http://norns.local/maiden/), look at the [second example file](2_interface.md) of this tutorial.
+In [Maiden](http://norns.local/maiden/), look at the [second example file](https://github.com/neauoire/tutorial/blob/master/2_interface.md) of this tutorial.
 
 - **Navigate to the second example** with `code > tutorial > 2_interface.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
@@ -59,9 +59,9 @@ screen.update()
 
 ## Interaction
 
-In [Maiden](http://norns.local/maiden/), look at the [third example file](3_interaction.md) of this tutorial.
+In [Maiden](http://norns.local/maiden/), look at the [third example file](https://github.com/neauoire/tutorial/blob/master/3_interaction.md) of this tutorial.
 
-- **Navigate to the second example** with `code > tutorial > 3_interface.lua`.
+- **Navigate to the third example** with `code > tutorial > 3_interface.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Move the crosshair** by turning the two knobs to the right of the device.
 - **Look at the screen**, notice the crosshair moving.
@@ -82,9 +82,9 @@ end
 
 ## Animation
 
-In [Maiden](http://norns.local/maiden/), look at the [fourth example file](4_animation.md) of this tutorial.
+In [Maiden](http://norns.local/maiden/), look at the [fourth example file](https://github.com/neauoire/tutorial/blob/master/4_animation.md) of this tutorial.
 
-- **Navigate to the second example** with `code > tutorial > 4_animation.lua`.
+- **Navigate to the fourth example** with `code > tutorial > 4_animation.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Change the animation modulation** by turning the two knobs to the right of the device.
 - **Look at the screen**, notice the screen being updated automatically.
@@ -101,6 +101,28 @@ re.event = function()
 end
 re:start()
 ```
+
+## Output
+
+In [Maiden](http://norns.local/maiden/), look at the [fifth example file](https://github.com/neauoire/tutorial/blob/master/5_output.md) of this tutorial.
+
+- **Navigate to the fifth example** with `code > tutorial > 5_output.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/5_output.png?raw=true' width='450'/>
+
+xx
+
+## Input
+
+In [Maiden](http://norns.local/maiden/), look at the [sixth example file](https://github.com/neauoire/tutorial/blob/master/6_input.md) of this tutorial.
+
+- **Navigate to the sixth example** with `code > tutorial > 6_input.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/6_input.png?raw=true' width='450'/>
+
+xx
 
 ## Creating a new project
 

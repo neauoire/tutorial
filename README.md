@@ -91,7 +91,7 @@ In [Maiden](http://norns.local/maiden/), look at the [fourth example file](https
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/4_animation.png?raw=true' width='450'/>
 
-The animation loop uses the metro object, the `30/1000` time parameter sets the reload to the rate of `30fps`.
+The animation loop uses the [metro object](https://monome.github.io/norns/doc/modules/metro.html), the `30/1000` time parameter sets the reload to the rate of `30fps`.
 
 ```
 re = metro.init()
@@ -111,7 +111,13 @@ In [Maiden](http://norns.local/maiden/), look at the [fifth example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/5_output.png?raw=true' width='450'/>
 
-xx
+To send messages from Norns to Supercollider, use the `addCommand` method in your supercollider synth.
+
+```
+this.addCommand("amp", "f", { arg msg;
+  amp = msg[1];
+});
+```
 
 ## Input
 
@@ -122,9 +128,15 @@ In [Maiden](http://norns.local/maiden/), look at the [sixth example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/6_input.png?raw=true' width='450'/>
 
-xx
+To receive the audio signal, you need to start polling with `_norns.poll_start_vu()`, and bind the callback function `mix.vu` like `norns.vu = mix.vu`.
 
-## Creating a new project
+```
+mix.vu = function(in1,in2,out1,out2)
+  signal.in1 = in1
+  signal.in2 = in2
+  signal.out1 = out1 
+  signal.out2 = out2
+end
+```
 
-To **create a new project**, I recommend that you first create a [new repository](https://github.com/new) instead of a simply creating a new folder to the device. This will allow you to share your project with others
-
+I hope you enjoyed these simple examples, good luck!

@@ -50,7 +50,14 @@ In [Maiden](http://norns.local/maiden/), look at the second example file of this
 
 ## Interaction
 
-In your ..
+In [Maiden](http://norns.local/maiden/), look at the third example file of this tutorial.
+
+- **Navigate to the second example** with `code > tutorial > 3_interface.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Move the crosshair** by turning the two knobs to the right of the device.
+- **Look at the screen**, notice the crosshair moving.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/3_interaction.png?raw=true' width='450'/>
 
 ## Creating a new project
 

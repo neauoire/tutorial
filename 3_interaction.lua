@@ -28,6 +28,9 @@ end
 
 function enc(id,delta)
   print('enc',id,delta)
+  if id == 1 then
+    focus.x = focus.x + delta
+  end
 end
 
 -- Render

@@ -138,7 +138,7 @@ In [Maiden](http://norns.local/maiden/), look at the [sixth example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/6_input.png?raw=true' width='450'/>
 
-To receive the audio signal, you need to start polling with `_norns.poll_start_vu()`, and bind the callback function `mix.vu` like `norns.vu = mix.vu`.
+To recieve the audio signal, you need to start polling with `_norns.poll_start_vu()`, and bind the callback function `mix.vu` like `norns.vu = mix.vu`.
 
 ```
 mix.vu = function(in1,in2,out1,out2)
@@ -146,6 +146,29 @@ mix.vu = function(in1,in2,out1,out2)
   signal.in2 = in2
   signal.out1 = out1 
   signal.out2 = out2
+end
+```
+
+## Midi
+
+In [Maiden](http://norns.local/maiden/), look at the [seventh example file](https://github.com/neauoire/tutorial/blob/master/7_midi.lua) of this tutorial.
+
+- **Navigate to the seventh example** with `code > tutorial > 7_midi.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Send midi to the device** by connecting a midi instrument via usb and pressing a key.
+- **Listen to the resulting note** by connecting a pair of headphones to the leftmost 1/4" input.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/7_midi.png?raw=true' width='450'/>
+
+To recieve the midi signal, you need to connect to the midi interface with `midi_signal = midi.connect()`, and give it a method to get the event, like `midi_signal.event = on_midi_event`.
+
+```
+midi_signal = midi.connect()
+midi_signal.event = on_midi_event
+
+function on_midi_event(data)
+  msg = midi.to_msg(data)
+  tab.print(msg)
 end
 ```
 

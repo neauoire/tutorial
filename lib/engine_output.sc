@@ -1,31 +1,46 @@
 Engine_OutputTutorial : CroneEngine {
-  var <synth;
+  var pg;
+  var amp=0.3;
+  var release=0.5;
+  var pw=0.5;
+  var cutoff=1000;
+  var gain=2;
 
   *new { arg context, doneCallback;
     ^super.new(context, doneCallback);
   }
 
   alloc {
-    synth = { |outbus|
-      var exciterFunction, numberOfExciters, numberOfCombs, numberOfAllpass;
-      var in, predelayed, out;
-      numberOfExciters = 10;
-      numberOfCombs = 7;
-      numberOfAllpass = 4;
-      exciterFunction = { Resonz.ar(Dust.ar(0.2, 50), 200 + rand(3000.0), 0.003) };
-      in = Mix.arFill(numberOfExciters, exciterFunction);
-      predelayed = DelayN.ar(in, 0.048);
-      out = Mix.arFill(numberOfCombs, {
-        CombL.ar(predelayed, 0.1, LFNoise1.kr(rand(0.1), 0.04, 0.05), 15);
-      });
-      numberOfAllpass.do({
-        out = AllpassN.ar(out, 0.050, [rand(0.050), rand(0.050)], 1);
-      });
-      Out.ar(outbus, in + (0.2 * out));
-    }.play(context.xg, args: [\outbus, context.out_b]);
-  }
+    pg = ParGroup.tail(context.xg);
+        SynthDef("PolyPerc", {
+      arg out, freq = 440, pw=pw, amp=amp, cutoff=cutoff, gain=gain, release=release;
+      var snd = Pulse.ar(freq, pw);
+      var filt = MoogFF.ar(snd,cutoff,gain);
+      var env = Env.perc(level: amp, releaseTime: release).kr(2);
+      //      out.poll;
+      Out.ar(out, (filt*env).dup);
+    }).add;
 
-  free {
-    synth.free;
+    this.addCommand("hz", "f", { arg msg;
+      var val = msg[1];
+      Synth("PolyPerc", [\out, context.out_b, \freq,val,\pw,pw,\amp,amp,\cutoff,cutoff,\gain,gain,\release,release], target:pg);
+    });
+
+    this.addCommand("amp", "f", { arg msg;
+      amp = msg[1];
+    });
+
+    this.addCommand("pw", "f", { arg msg;
+      pw = msg[1];
+    });
+    this.addCommand("release", "f", { arg msg;
+      release = msg[1];
+    });
+    this.addCommand("cutoff", "f", { arg msg;
+      cutoff = msg[1];
+    });
+    this.addCommand("gain", "f", { arg msg;
+      gain = msg[1];
+    });
   }
 }

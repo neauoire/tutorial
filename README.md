@@ -112,6 +112,9 @@ In [Maiden](http://norns.local/maiden/), look at the [fifth example file](https:
 
 - **Navigate to the fifth example** with `code > tutorial > 5_output.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Change the rate of notes** by turning the left knob, to the right of the device.
+- **Change the frequency of these notes** by turning the right knob, to the right of the device.
+- **Listen to the generated sound** by connecting a pair of headphones to the leftmost 1/4" input.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/5_output.png?raw=true' width='450'/>
 
@@ -129,6 +132,9 @@ In [Maiden](http://norns.local/maiden/), look at the [sixth example file](https:
 
 - **Navigate to the sixth example** with `code > tutorial > 6_input.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Send audio to the device** by connecting a sound source in the fourth 1/4" input.
+- **Change the amplitude of the outgoing sound** by turning the one of the two knobs, to the right of the device.
+- **Listen to the modified sound** by connecting a pair of headphones to the leftmost 1/4" input.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/6_input.png?raw=true' width='450'/>
 

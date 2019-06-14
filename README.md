@@ -13,7 +13,7 @@ You need to get the device online and **accessible to your WIFI network**.
 
 - **To edit code(IDE)**, open [Maiden](http://norns.local/maiden/) by going `http://norns.local/` in your browser.
 - **To transfer files(SFTP)**, open your [SFTP client](https://cyberduck.io/download/) and connect to the _Norns's IP_, with username `we` and password `sleep`.
-- **To install new projects(SSH)**, open a new [terminal window](https://www.youtube.com/watch?v=IGmfU6QU5dI), type `ssh we@192.168.128.109`, password `sleep`.
+- **To install new projects(SSH)**, open a new [terminal window](https://www.youtube.com/watch?v=IGmfU6QU5dI), type `ssh we@norns.local`, with password `sleep`.
 
 You are now connected to the device, via the IDE, FTP and SSH. 
 

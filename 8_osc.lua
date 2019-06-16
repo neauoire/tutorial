@@ -12,7 +12,7 @@ function init()
   print('init')
   connect()
   -- Render Style
-  screen.level(20)
+  screen.level(15)
   screen.aa(0)
   screen.line_width(1)
   -- Center focus
@@ -72,7 +72,7 @@ end
 
 function draw_event(event)
   line_height = 8
-  screen.level(20)
+  screen.level(15)
   if event.note then
     screen.move(30,viewport.height - (line_height * 1))
     screen.text(msg.note)

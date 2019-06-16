@@ -14,7 +14,7 @@ local p_amp_out
 function init()
   print('init')
   -- Render Style
-  screen.level(20)
+  screen.level(15)
   screen.aa(0)
   screen.line_width(1)
   -- Render
@@ -75,6 +75,7 @@ end
 -- Render
 
 function draw_frame()
+  screen.level(15)
   screen.rect(1, 1, viewport.width-1, viewport.height-1)
   screen.stroke()
 end
@@ -90,7 +91,7 @@ function draw_uv(value,maximum,offset)
   screen.move(pos.x,pos.y)
   screen.line(pos.x,pos.y + size.height)
   screen.stroke()
-  screen.level(20)
+  screen.level(15)
   screen.move(pos.x,pos.y + size.height)
   screen.line(pos.x,activity)
   screen.stroke()
@@ -101,7 +102,7 @@ function draw_controls()
   x = viewport.width - 16
   y = math.floor(viewport.height-(controls.amp * (viewport.height-5)) - 2)
   -- Draw
-  screen.level(20)
+  screen.level(15)
   screen.line_width(1)
   screen.move(x,y)
   screen.line(x + 4,y)

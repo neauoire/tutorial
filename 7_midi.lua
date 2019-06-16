@@ -13,7 +13,7 @@ local viewport = { width = 128, height = 64, frame = 0 }
 function init()
   connect()
   -- Render Style
-  screen.level(20)
+  screen.level(15)
   screen.aa(0)
   screen.line_width(1)
   -- Center focus
@@ -70,7 +70,7 @@ end
 -- Render
 
 function draw_frame()
-  screen.level(20)
+  screen.level(15)
   screen.rect(1, 1, viewport.width-1, viewport.height-1)
   screen.stroke()
 end
@@ -90,7 +90,7 @@ end
 
 function draw_event(event)
   line_height = 8
-  screen.level(20)
+  screen.level(15)
   if event.note then
     screen.move(30,viewport.height - (line_height * 1))
     screen.text(msg.note)

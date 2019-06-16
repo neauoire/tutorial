@@ -10,7 +10,7 @@ local focus = { x = 0, y = 0 }
 function init()
   print('init')
   -- Render Style
-  screen.level(10)
+  screen.level(15)
   screen.aa(0)
   screen.line_width(1)
   -- Center focus

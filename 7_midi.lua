@@ -11,7 +11,6 @@ local viewport = { width = 128, height = 64, frame = 0 }
 -- Main
 
 function init()
-  print('init')
   connect()
   -- Render Style
   screen.level(20)
@@ -71,6 +70,7 @@ end
 -- Render
 
 function draw_frame()
+  screen.level(20)
   screen.rect(1, 1, viewport.width-1, viewport.height-1)
   screen.stroke()
 end
@@ -110,7 +110,6 @@ function draw_event(event)
 end
 
 function redraw(event)
-  print('redraw')
   screen.clear()
   draw_frame()
   draw_labels()

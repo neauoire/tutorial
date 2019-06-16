@@ -2,9 +2,10 @@
 -- v1.0.0 @neauoire
 -- llllllll.co/t/norns-tutorial/23241
 
-engine.name = 'OutputTutorial'
+local g
 
 local viewport = { width = 128, height = 64, frame = 0 }
+local focus = { x = 1, y = 1, brightness = 15 }
 
 -- Main
 
@@ -15,11 +16,11 @@ function init()
   screen.aa(0)
   screen.line_width(1)
   -- Render
-  redraw()
+  update()
 end
 
 function connect()
-  osc.event = on_osc_event
+  g = grid.connect()
 end
 
 function on_osc_event(path, args, from)
@@ -27,21 +28,33 @@ function on_osc_event(path, args, from)
   redraw(msg)
 end
 
+function update()
+  g:all(0)
+  g:led(focus.x,focus.y,15)
+  g:refresh()
+  redraw()
+end
+
 -- Interactions
 
 function key(id,state)
   print('key',id,state)
-  if state == 1 and midi_signal then
-    midi_signal.note_on(60,127)
-  elseif midi_signal then
-    midi_signal.note_off(60,127)
+  if id == 2 and state == 1 then
+    focus.brightness = 15
+  elseif id == 3 and state == 1 then
+    focus.brightness = 5
   end
-  redraw()
+  update()
 end
 
 function enc(id,delta)
   print('enc',id,delta)
-  redraw()
+  if id == 2 then
+    focus.x = clamp(focus.x + delta, 1, 16)
+  elseif id == 3 then
+    focus.y = clamp(focus.y + delta, 1, 8)
+  end
+  update()
 end
 
 -- Render
@@ -87,7 +100,6 @@ function draw_msg(msg)
 end
 
 function redraw(msg)
-  print('redraw')
   screen.clear()
   draw_frame()
   draw_labels()
@@ -102,8 +114,4 @@ end
 
 function clamp(val,min,max)
   return val < min and min or val > max and max or val
-end
-
-function note_to_hz(note)
-  return (440 / 32) * (2 ^ ((note - 9) / 12))
 end

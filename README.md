@@ -151,12 +151,14 @@ end
 
 ## Midi
 
-In [Maiden](http://norns.local/maiden/), look at the [seventh example file](https://github.com/neauoire/tutorial/blob/master/7_midi.lua) of this tutorial.
+In [Maiden](http://norns.local/maiden/), look at the [seventh example file](https://github.com/neauoire/tutorial/blob/master/7_midi.lua) of this tutorial. 
 
 - **Navigate to the seventh example** with `code > tutorial > 7_midi.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
 - **Send midi to the device** by connecting a midi instrument via usb and pressing a key.
 - **Listen to the resulting note** by connecting a pair of headphones to the leftmost 1/4" input.
+
+You can control which device is sending midi, by selecting it in `SYSTEM > MIDI`, this example will receive midi from the first device, and send midi to the second device.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/7_midi.png?raw=true' width='450'/>
 
@@ -184,5 +186,18 @@ In [Maiden](http://norns.local/maiden/), look at the [eight example file](https:
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/8_osc.png?raw=true' width='450'/>
 
 To receive the osc signal, you need to connect to the osc interface with `osc.event = on_osc_event`, and give it a method to get the event, like `on_osc_event(path, args, from)`, the `from` parameter is an array including the `ip` and `port`.
+
+## Grid
+
+In [Maiden](http://norns.local/maiden/), look at the [ninth example file](https://github.com/neauoire/tutorial/blob/master/9_grid.lua) of this tutorial.
+
+- **Connect a Monome grid device**, and select it in `SYSTEM > GRID`.
+- **Navigate to the ninth example** with `code > tutorial > 9_grid.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Touch a button on the grid** and watch it light up on the norns screen.
+- **Turn the knobs** to move the light across the monome.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/9_grid.png?raw=true' width='450'/>
+
 
 I hope you enjoyed these simple examples, **good luck**!

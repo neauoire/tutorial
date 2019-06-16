@@ -95,11 +95,11 @@ In [Maiden](http://norns.local/maiden/), look at the [fourth example file](https
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/4_animation.png?raw=true' width='450'/>
 
-The animation loop uses the [metro object](https://monome.github.io/norns/doc/modules/metro.html), the `30/1000` time parameter sets the reload to the rate of `30fps`.
+The animation loop uses the [metro object](https://monome.github.io/norns/doc/modules/metro.html), the `15/1000` time parameter sets the reload to the rate of `15fps`.
 
 ```
 re = metro.init()
-re.time = 30/1000
+re.time = 15/1000
 re.event = function()
   redraw()
 end
@@ -138,7 +138,7 @@ In [Maiden](http://norns.local/maiden/), look at the [sixth example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/6_input.png?raw=true' width='450'/>
 
-To recieve the audio signal, you need to start polling with `_norns.poll_start_vu()`, and bind the callback function `mix.vu` like `norns.vu = mix.vu`.
+To receive the audio signal, you need to start polling with `_norns.poll_start_vu()`, and bind the callback function `mix.vu` like `norns.vu = mix.vu`.
 
 ```
 mix.vu = function(in1,in2,out1,out2)
@@ -160,7 +160,7 @@ In [Maiden](http://norns.local/maiden/), look at the [seventh example file](http
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/7_midi.png?raw=true' width='450'/>
 
-To recieve the midi signal, you need to connect to the midi interface with `midi_signal = midi.connect()`, and give it a method to get the event, like `midi_signal.event = on_midi_event`.
+To receive the midi signal, you need to connect to the midi interface with `midi_signal = midi.connect()`, and give it a method to get the event, like `midi_signal.event = on_midi_event`.
 
 ```
 midi_signal = midi.connect()
@@ -183,6 +183,6 @@ In [Maiden](http://norns.local/maiden/), look at the [eight example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/8_osc.png?raw=true' width='450'/>
 
-To recieve the osc signal, you need to connect to the osc interface with `osc.event = on_osc_event`, and give it a method to get the event, like `on_osc_event(path, args, from)`, the `from` parameter is an array including the `ip` and `port`.
+To receive the osc signal, you need to connect to the osc interface with `osc.event = on_osc_event`, and give it a method to get the event, like `on_osc_event(path, args, from)`, the `from` parameter is an array including the `ip` and `port`.
 
 I hope you enjoyed these simple examples, **good luck**!

@@ -1,11 +1,9 @@
--- scriptname: tutorial part 7
+-- scriptname: tutorial part 9
 -- v1.0.0 @neauoire
 -- llllllll.co/t/norns-tutorial/23241
 
 engine.name = 'OutputTutorial'
 
-local midi_signal_in
-local midi_signal_out
 local viewport = { width = 128, height = 64, frame = 0 }
 
 -- Main
@@ -21,33 +19,22 @@ function init()
 end
 
 function connect()
-  midi_signal_in = midi.connect(1)
-  midi_signal_in.event = on_midi_event
-  midi_signal_out = midi.connect(2)
+  osc.event = on_osc_event
 end
 
-function on_midi_event(data)
-  msg = midi.to_msg(data)
-  play(msg)
+function on_osc_event(path, args, from)
+  msg = { path = path, ip = from[1], port = from[2], bytes = args }
   redraw(msg)
-end
-
-function play(msg)
-  if msg.type == 'note_on' then
-    hz = note_to_hz(msg.note)
-    engine.amp(msg.vel / 127)
-    engine.hz(hz)
-  end
 end
 
 -- Interactions
 
 function key(id,state)
   print('key',id,state)
-  if state == 1 and midi_signal_out then
-    midi_signal_out:note_on(60,127)
-  elseif midi_signal_ then
-    midi_signal_out:note_off(60,127)
+  if state == 1 and midi_signal then
+    midi_signal.note_on(60,127)
+  elseif midi_signal then
+    midi_signal.note_off(60,127)
   end
   redraw()
 end
@@ -60,7 +47,7 @@ end
 -- Render
 
 function draw_frame()
-  screen.level(15)
+  screen.level(10)
   screen.rect(1, 1, viewport.width-1, viewport.height-1)
   screen.stroke()
 end
@@ -69,42 +56,43 @@ function draw_labels()
   line_height = 8
   screen.level(1)
   screen.move(5,viewport.height - (line_height * 1))
-  screen.text('note')
+  screen.text('path')
   screen.move(5,viewport.height - (line_height * 2))
-  screen.text('ch')
+  screen.text('ip')
   screen.move(5,viewport.height - (line_height * 3))
-  screen.text('vel')
+  screen.text('port')
   screen.move(5,viewport.height - (line_height * 4))
-  screen.text('type')
+  screen.text('len')
 end
 
-function draw_event(event)
+function draw_msg(msg)
   line_height = 8
   screen.level(15)
-  if event.note then
+  if msg.path then
     screen.move(30,viewport.height - (line_height * 1))
-    screen.text(msg.note)
+    screen.text(msg.path)
   end
-  if event.ch then
+  if msg.ip then
     screen.move(30,viewport.height - (line_height * 2))
-    screen.text(msg.ch)
+    screen.text(msg.ip)
   end
-  if event.vel then
+  if msg.port then
     screen.move(30,viewport.height - (line_height * 3))
-    screen.text(msg.vel)
+    screen.text(msg.port)
   end
-  if event.type then
+  if msg.bytes then
     screen.move(30,viewport.height - (line_height * 4))
-    screen.text(msg.type)
+    screen.text(#msg.bytes)
   end
 end
 
-function redraw(event)
+function redraw(msg)
+  print('redraw')
   screen.clear()
   draw_frame()
   draw_labels()
-  if event then
-    draw_event(event)
+  if msg then
+    draw_msg(msg)
   end
   screen.stroke()
   screen.update()

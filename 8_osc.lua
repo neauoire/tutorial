@@ -2,21 +2,16 @@
 -- v1.0.0 @neauoire
 -- llllllll.co/t/norns-tutorial/23241
 
-engine.name = 'OutputTutorial'
-
 local viewport = { width = 128, height = 64, frame = 0 }
 
 -- Main
 
 function init()
-  print('init')
   connect()
   -- Render Style
   screen.level(15)
   screen.aa(0)
   screen.line_width(1)
-  -- Center focus
-  reset()
   -- Render
   redraw()
 end
@@ -28,10 +23,6 @@ end
 function on_osc_event(path, args, from)
   msg = { path = path, ip = from[1], port = from[2], bytes = args }
   redraw(msg)
-end
-
-function reset()
-  print('reset')
 end
 
 -- Interactions
@@ -94,7 +85,6 @@ function draw_msg(msg)
 end
 
 function redraw(msg)
-  print('redraw')
   screen.clear()
   draw_frame()
   draw_labels()

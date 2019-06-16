@@ -9,7 +9,6 @@ local rate = 10
 -- Main
 
 function init()
-  print('init')
   -- Render Style
   screen.level(15)
   screen.aa(0)

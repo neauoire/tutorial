@@ -12,7 +12,6 @@ local p_amp_in
 local p_amp_out
 
 function init()
-  print('init')
   -- Render Style
   screen.level(15)
   screen.aa(0)
@@ -54,9 +53,10 @@ end
 
 -- Controls
 
-function key(n,z)
-  if z == 0 then return end
-  if n == 2 or n == 3 then
+function key(id,state)
+  print('key',id,state)
+  if state == 0 then return end
+  if id == 2 or id == 3 then
     if controls.amp == 1 then
       controls.amp = 0
     else

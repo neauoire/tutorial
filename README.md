@@ -200,5 +200,12 @@ In [Maiden](http://norns.local/maiden/), look at the [ninth example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/9_grid.png?raw=true' width='450'/>
 
+To communicate with the grid, you need to connect to the grid with `g = grid.connect()`. The `led(x,y,brightness)` method allows you to toggle LEDs.
+
+```
+g:all(0)
+g:led(1,2,15)
+g:refresh()
+```
 
 I hope you enjoyed these simple examples, **good luck**!

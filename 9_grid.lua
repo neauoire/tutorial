@@ -3,7 +3,6 @@
 -- llllllll.co/t/norns-tutorial/23241
 
 local g
-
 local viewport = { width = 128, height = 64, frame = 0 }
 local focus = { x = 1, y = 1, brightness = 15 }
 
@@ -21,16 +20,16 @@ end
 
 function connect()
   g = grid.connect()
+  g.event = on_grid_event
 end
 
-function on_osc_event(path, args, from)
-  msg = { path = path, ip = from[1], port = from[2], bytes = args }
-  redraw(msg)
+function on_grid_event(x,y,z)
+  print(x,y,z)
 end
 
 function update()
   g:all(0)
-  g:led(focus.x,focus.y,15)
+  g:led(focus.x,focus.y,focus.brightness)
   g:refresh()
   redraw()
 end
@@ -65,47 +64,38 @@ function draw_frame()
   screen.stroke()
 end
 
-function draw_labels()
-  line_height = 8
+function draw_grid()
   screen.level(1)
-  screen.move(5,viewport.height - (line_height * 1))
-  screen.text('path')
-  screen.move(5,viewport.height - (line_height * 2))
-  screen.text('ip')
-  screen.move(5,viewport.height - (line_height * 3))
-  screen.text('port')
-  screen.move(5,viewport.height - (line_height * 4))
-  screen.text('len')
+  offset = { x = 30, y = 13, spacing = 4 }
+  for x=1,16,1 do 
+    for y=1,8,1 do 
+      if focus.x == x and focus.y == y then
+        screen.stroke()
+        screen.level(15)
+      end
+      screen.pixel((x*offset.spacing) + offset.x, (y*offset.spacing) + offset.y)
+      if focus.x == x and focus.y == y then
+        screen.stroke()
+        screen.level(1)
+      end
+    end
+  end
+  screen.stroke()
 end
 
-function draw_msg(msg)
-  line_height = 8
+function draw_label()
   screen.level(15)
-  if msg.path then
-    screen.move(30,viewport.height - (line_height * 1))
-    screen.text(msg.path)
-  end
-  if msg.ip then
-    screen.move(30,viewport.height - (line_height * 2))
-    screen.text(msg.ip)
-  end
-  if msg.port then
-    screen.move(30,viewport.height - (line_height * 3))
-    screen.text(msg.port)
-  end
-  if msg.bytes then
-    screen.move(30,viewport.height - (line_height * 4))
-    screen.text(#msg.bytes)
-  end
+  line_height = 8
+  screen.move(5,viewport.height - (line_height * 1))
+  screen.text(focus.x..','..focus.y)
+  screen.stroke()
 end
 
-function redraw(msg)
+function redraw()
   screen.clear()
   draw_frame()
-  draw_labels()
-  if msg then
-    draw_msg(msg)
-  end
+  draw_grid()
+  draw_label()
   screen.stroke()
   screen.update()
 end

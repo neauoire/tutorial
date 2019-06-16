@@ -200,7 +200,7 @@ In [Maiden](http://norns.local/maiden/), look at the [ninth example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/9_grid.png?raw=true' width='450'/>
 
-To communicate with the grid, you need to connect to the grid with `g = grid.connect()`. The `led(x,y,brightness)` method allows you to toggle LEDs.
+To communicate with the grid, you need to connect to the grid with `g = grid.connect()`, and give it a method to get the key event, like `g.key = on_grid_key`. The `led(x,y,brightness)` method allows you to toggle LEDs.
 
 ```
 g:all(0)

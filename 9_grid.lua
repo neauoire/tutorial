@@ -20,11 +20,13 @@ end
 
 function connect()
   g = grid.connect()
-  g.event = on_grid_event
+  g.key = on_grid_key
 end
 
-function on_grid_event(x,y,z)
-  print(x,y,z)
+function on_grid_key(x,y,z)
+  focus.x = x
+  focus.y = y
+  update()
 end
 
 function update()

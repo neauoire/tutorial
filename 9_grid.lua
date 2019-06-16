@@ -66,20 +66,24 @@ function draw_frame()
   screen.stroke()
 end
 
+function draw_pixel(x,y)
+  if focus.x == x and focus.y == y then
+    screen.stroke()
+    screen.level(15)
+  end
+  screen.pixel((x*offset.spacing) + offset.x, (y*offset.spacing) + offset.y)
+  if focus.x == x and focus.y == y then
+    screen.stroke()
+    screen.level(1)
+  end
+end
+
 function draw_grid()
   screen.level(1)
   offset = { x = 30, y = 13, spacing = 4 }
   for x=1,16,1 do 
     for y=1,8,1 do 
-      if focus.x == x and focus.y == y then
-        screen.stroke()
-        screen.level(15)
-      end
-      screen.pixel((x*offset.spacing) + offset.x, (y*offset.spacing) + offset.y)
-      if focus.x == x and focus.y == y then
-        screen.stroke()
-        screen.level(1)
-      end
+      draw_pixel(x,y)
     end
   end
   screen.stroke()

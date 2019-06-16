@@ -2,8 +2,6 @@
 -- v1.0.0 @neauoire
 -- llllllll.co/t/norns-tutorial/23241
 
-engine.name = 'OutputTutorial'
-
 local viewport = { width = 128, height = 64, frame = 0 }
 
 -- Main

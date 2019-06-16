@@ -172,4 +172,17 @@ function on_midi_event(data)
 end
 ```
 
+## OSC
+
+In [Maiden](http://norns.local/maiden/), look at the [eight example file](https://github.com/neauoire/tutorial/blob/master/8_osc.lua) of this tutorial.
+
+- **Navigate to the eight example** with `code > tutorial > 8_osc.lua`.
+- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Send osc to the device** by addressing `norns.local` at port `10111`.
+- **Look at the incoming data**.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/8_osc.png?raw=true' width='450'/>
+
+To recieve the osc signal, you need to connect to the osc interface with `osc.event = on_osc_event`, and give it a method to get the event, like `on_osc_event(path, args, from)`, the `from` parameter is an array including the `ip` and `port`.
+
 I hope you enjoyed these simple examples, **good luck**!

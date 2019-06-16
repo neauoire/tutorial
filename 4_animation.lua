@@ -50,17 +50,19 @@ function draw_frame()
 end
 
 function draw_wave()
-  for i = 1,64 do
-    x = i * 2
+  for i = 1,126 do
+    x = i
     y = (math.sin((viewport.frame+i)/rate) * amplitude) + (viewport.height/2)
     screen.pixel(x,y)
   end
+  screen.fill()
 end
 
 function draw_label()
   line_height = 8
   screen.move(5,viewport.height - (line_height * 1))
   screen.text(amplitude..':'..rate)
+  screen.stroke()
 end
 
 function redraw()

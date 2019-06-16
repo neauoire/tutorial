@@ -81,7 +81,7 @@ end
 -- Interval
 
 re = metro.init()
-re.time = 30/1000
+re.time = 15/1000
 re.event = function()
   viewport.frame = viewport.frame + 1
   redraw()

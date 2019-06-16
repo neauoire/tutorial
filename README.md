@@ -194,8 +194,9 @@ In [Maiden](http://norns.local/maiden/), look at the [ninth example file](https:
 - **Connect a Monome grid device**, and select it in `SYSTEM > GRID`.
 - **Navigate to the ninth example** with `code > tutorial > 9_grid.lua`.
 - **Send it to the device** by clicking on the play button to the top right of the Maiden window.
-- **Touch a button on the grid** and watch it light up on the norns screen.
-- **Turn the knobs** to move the light across the monome.
+- **Touch a button on the grid** and watch it light up on the Norns.
+- **Move the light across the monome** by turning the knobs on the Norns.
+- **Change the brightness** by pressing the buttons on the Norns.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/9_grid.png?raw=true' width='450'/>
 

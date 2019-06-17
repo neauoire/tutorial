@@ -7,7 +7,7 @@ engine.name = 'InputTutorial'
 local viewport = { width = 128, height = 64 }
 local signal = { amp_in_l = 0, amp_out_l = 0, amp_in_l_max = 0, amp_out_l_max = 0 }
 local controls = { amp = 1.0 }
-local refresh_rate = 15/1000
+local refresh_rate = 1.0 / 15
 local p_amp_in
 local p_amp_out
 

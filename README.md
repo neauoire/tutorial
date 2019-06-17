@@ -95,11 +95,11 @@ In [Maiden](http://norns.local/maiden/), look at the [fourth example file](https
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/4_animation.png?raw=true' width='450'/>
 
-The animation loop uses the [metro object](https://monome.github.io/norns/doc/modules/metro.html), the `15/1000` time parameter sets the reload to the rate of `15fps`.
+The animation loop uses the [metro object](https://monome.github.io/norns/doc/modules/metro.html), the `1.0/15` time parameter sets the reload to the rate of `15fps`.
 
 ```
 re = metro.init()
-re.time = 15/1000
+re.time = 1.0 / 15
 re.event = function()
   redraw()
 end

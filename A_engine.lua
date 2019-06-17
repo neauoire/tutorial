@@ -47,7 +47,7 @@ end
 -- Render
 
 function draw_frame()
-  screen.level(10)
+  screen.level(15)
   screen.rect(1, 1, viewport.width-1, viewport.height-1)
   screen.stroke()
 end

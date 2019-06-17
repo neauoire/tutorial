@@ -21,7 +21,17 @@ function init()
 end
 
 function update()
+  tab.print(engine.names)
+  select(2)
   redraw()
+end
+
+function select(id)
+  engine.load('PolySub', engineLoadedCallback)
+end
+
+function engineLoadedCallback() 
+   engine.list_commands()
 end
 
 -- Interactions

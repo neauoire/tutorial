@@ -7,6 +7,9 @@
 --    \\\\////
 --
 
+engine.name = 'OutputTutorial'
+
+local candidates = {}
 local viewport = { width = 128, height = 64, frame = 0 }
 
 -- Main
@@ -20,14 +23,34 @@ function init()
   update()
 end
 
-function update()
-  tab.print(engine.names)
-  select(2)
-  redraw()
+function is_compatible()
+  return engine['hz'] ~= nil
 end
 
-function select(id)
-  engine.load('PolySub', engineLoadedCallback)
+function get_engine_id()
+  for id = 1, #engine.names do
+    name = engine.names[id]
+    if name == engine.name then
+      return id
+    end
+  end
+  return -1
+end
+
+function select_next_engine()
+  target_id = (get_engine_id() + 1)
+  next_name = engine.names[target_id]
+  print('Loading '..next_name)
+  engine.load(next_name, on_engine_load)
+end
+
+function on_engine_load()
+  print('Loaded '..engine.name)
+  update()
+end
+
+function update()
+  redraw()
 end
 
 function engineLoadedCallback() 
@@ -38,6 +61,9 @@ end
 
 function key(id,state)
   update()
+  if id == 3 and state == 1 then
+    select_next_engine()
+  end
 end
 
 function enc(id,delta)
@@ -47,14 +73,38 @@ end
 -- Render
 
 function draw_frame()
-  screen.level(15)
+  screen.level(10)
   screen.rect(1, 1, viewport.width-1, viewport.height-1)
   screen.stroke()
+end
+
+function draw_labels()
+  line_height = 8
+  screen.level(5)
+  screen.move(5,viewport.height - (line_height * 1))
+  screen.text('>')
+  screen.move(5,viewport.height - (line_height * 2))
+  screen.text('name')
+  screen.move(5,viewport.height - (line_height * 3))
+  screen.text('id')
+  
+  screen.level(15)
+  screen.move(30,viewport.height - (line_height * 1))
+  if is_compatible() == true then
+    screen.text('compatible')
+  else
+    screen.text('incompatible')
+  end
+  screen.move(30,viewport.height - (line_height * 2))
+  screen.text(engine.name)
+  screen.move(30,viewport.height - (line_height * 3))
+  screen.text(get_engine_id()..'/'..#engine.names)
 end
 
 function redraw()
   screen.clear()
   draw_frame()
+  draw_labels()
   screen.stroke()
   screen.update()
 end

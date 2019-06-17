@@ -21,12 +21,22 @@ end
 function connect()
   g = grid.connect()
   g.key = on_grid_key
+  g.add = on_grid_add
+  g.remove = on_grid_remove
 end
 
 function on_grid_key(x,y,z)
   focus.x = x
   focus.y = y
   update()
+end
+
+function on_grid_add(g)
+  print('on_add')
+end
+
+function on_grid_remove(g)
+  print('on_remove')
 end
 
 function update()
@@ -39,7 +49,6 @@ end
 -- Interactions
 
 function key(id,state)
-  print('key',id,state)
   if id == 2 and state == 1 then
     focus.brightness = 15
   elseif id == 3 and state == 1 then
@@ -49,7 +58,6 @@ function key(id,state)
 end
 
 function enc(id,delta)
-  print('enc',id,delta)
   if id == 2 then
     focus.x = clamp(focus.x + delta, 1, 16)
   elseif id == 3 then

@@ -1,6 +1,11 @@
--- scriptname: tutorial part 2
--- v1.0.0 @neauoire
--- llllllll.co/t/norns-tutorial/23241
+--  
+--    ////\\\\
+--    ////\\\\  TUTORIAL
+--    ////\\\\  PART 4
+--    \\\\////
+--    \\\\////  ANIMATION
+--    \\\\////
+--
 
 local viewport = { width = 128, height = 64, frame = 0 }
 local amplitude = 10

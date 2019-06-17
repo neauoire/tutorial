@@ -1,6 +1,11 @@
--- scriptname: tutorial part 6
--- v1.0.0 @neauoire
--- llllllll.co/t/norns-tutorial/23241
+--  
+--    ////\\\\
+--    ////\\\\  TUTORIAL
+--    ////\\\\  PART 6
+--    \\\\////
+--    \\\\////  INPUT
+--    \\\\////
+--
 
 engine.name = 'InputTutorial'
 

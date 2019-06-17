@@ -1,6 +1,11 @@
--- scriptname: tutorial part 8
--- v1.0.0 @neauoire
--- llllllll.co/t/norns-tutorial/23241
+--  
+--    ////\\\\
+--    ////\\\\  TUTORIAL
+--    ////\\\\  PART 8
+--    \\\\////
+--    \\\\////  OSC
+--    \\\\////
+--
 
 local viewport = { width = 128, height = 64, frame = 0 }
 

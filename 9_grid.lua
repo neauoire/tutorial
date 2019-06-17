@@ -1,6 +1,11 @@
--- scriptname: tutorial part 9
--- v1.0.0 @neauoire
--- llllllll.co/t/norns-tutorial/23241
+--  
+--    ////\\\\
+--    ////\\\\  TUTORIAL
+--    ////\\\\  PART 9
+--    \\\\////
+--    \\\\////  GRID
+--    \\\\////
+--
 
 local g
 local viewport = { width = 128, height = 64, frame = 0 }
@@ -23,6 +28,10 @@ function connect()
   g.key = on_grid_key
   g.add = on_grid_add
   g.remove = on_grid_remove
+end
+
+function is_connected()
+  return g.device ~= nil
 end
 
 function on_grid_key(x,y,z)
@@ -87,6 +96,7 @@ function draw_pixel(x,y)
 end
 
 function draw_grid()
+  if is_connected() ~= true then return end
   screen.level(1)
   offset = { x = 30, y = 13, spacing = 4 }
   for x=1,16,1 do 
@@ -101,7 +111,11 @@ function draw_label()
   screen.level(15)
   line_height = 8
   screen.move(5,viewport.height - (line_height * 1))
-  screen.text(focus.x..','..focus.y)
+  if is_connected() ~= true then
+    screen.text('Grid is not connected.')
+  else
+    screen.text(focus.x..','..focus.y)
+  end
   screen.stroke()
 end
 

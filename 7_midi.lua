@@ -1,6 +1,11 @@
--- scriptname: tutorial part 7
--- v1.0.0 @neauoire
--- llllllll.co/t/norns-tutorial/23241
+--  
+--    ////\\\\
+--    ////\\\\  TUTORIAL
+--    ////\\\\  PART 7
+--    \\\\////
+--    \\\\////  MIDI
+--    \\\\////
+--
 
 engine.name = 'OutputTutorial'
 

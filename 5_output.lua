@@ -1,6 +1,11 @@
--- scriptname: tutorial part 5
--- v1.0.0 @neauoire
--- llllllll.co/t/norns-tutorial/23241
+--  
+--    ////\\\\
+--    ////\\\\  TUTORIAL
+--    ////\\\\  PART 5
+--    \\\\////
+--    \\\\////  OUTPUT
+--    \\\\////
+--
 
 engine.name = 'OutputTutorial'
 

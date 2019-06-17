@@ -32,7 +32,7 @@ You are now ready to use this tutorial.
 In [Maiden](http://norns.local/maiden/), reload the window to make sure the tutorial files are visible, and look at the [first example file](https://github.com/neauoire/tutorial/blob/master/1_blank.lua) of this tutorial.
 
 - **Navigate to the first example** with `code > tutorial > 1_blank.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Look at the blank screen**, there is nothing to see.
 - **Look at the logs**, at the bottom of the browser window in the console, it should display `init` and `redraw`.
 - This example is not interactive.
@@ -46,7 +46,7 @@ You have run your first Norns script, from Github, via Maiden.
 In [Maiden](http://norns.local/maiden/), look at the [second example file](https://github.com/neauoire/tutorial/blob/master/2_interface.lua) of this tutorial.
 
 - **Navigate to the second example** with `code > tutorial > 2_interface.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Look at the screen**, notice the basic lines being drawn.
 - This example is not interactive.
 
@@ -66,7 +66,7 @@ screen.update()
 In [Maiden](http://norns.local/maiden/), look at the [third example file](https://github.com/neauoire/tutorial/blob/master/3_interaction.lua) of this tutorial.
 
 - **Navigate to the third example** with `code > tutorial > 3_interface.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Move the crosshair** by turning the two knobs to the right of the device.
 - **Look at the screen**, notice the crosshair moving.
 
@@ -89,7 +89,7 @@ end
 In [Maiden](http://norns.local/maiden/), look at the [fourth example file](https://github.com/neauoire/tutorial/blob/master/4_animation.lua) of this tutorial.
 
 - **Navigate to the fourth example** with `code > tutorial > 4_animation.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Change the animation modulation** by turning the two knobs to the right of the device.
 - **Look at the screen**, notice the screen being updated automatically.
 
@@ -111,7 +111,7 @@ re:start()
 In [Maiden](http://norns.local/maiden/), look at the [fifth example file](https://github.com/neauoire/tutorial/blob/master/5_output.lua) of this tutorial.
 
 - **Navigate to the fifth example** with `code > tutorial > 5_output.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Change the rate of notes** by turning the left knob, to the right of the device.
 - **Change the frequency of these notes** by turning the right knob, to the right of the device.
 - **Listen to the generated sound** by connecting a pair of headphones to the leftmost 1/4" input.
@@ -131,7 +131,7 @@ this.addCommand("amp", "f", { arg msg;
 In [Maiden](http://norns.local/maiden/), look at the [sixth example file](https://github.com/neauoire/tutorial/blob/master/6_input.lua) of this tutorial.
 
 - **Navigate to the sixth example** with `code > tutorial > 6_input.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Send audio to the device** by connecting a sound source in the fourth 1/4" input.
 - **Change the amplitude of the outgoing sound** by turning the one of the two knobs, to the right of the device.
 - **Listen to the modified sound** by connecting a pair of headphones to the leftmost 1/4" input.
@@ -162,7 +162,7 @@ p_amp_in:start()
 In [Maiden](http://norns.local/maiden/), look at the [seventh example file](https://github.com/neauoire/tutorial/blob/master/7_midi.lua) of this tutorial. 
 
 - **Navigate to the seventh example** with `code > tutorial > 7_midi.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Send midi to the device** by connecting a midi instrument via usb and pressing a key.
 - **Listen to the resulting note** by connecting a pair of headphones to the leftmost 1/4" input.
 
@@ -187,7 +187,7 @@ end
 In [Maiden](http://norns.local/maiden/), look at the [eight example file](https://github.com/neauoire/tutorial/blob/master/8_osc.lua) of this tutorial.
 
 - **Navigate to the eight example** with `code > tutorial > 8_osc.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Send osc to the device** by addressing `norns.local` at port `10111`.
 - **Look at the incoming data**.
 
@@ -201,7 +201,7 @@ In [Maiden](http://norns.local/maiden/), look at the [ninth example file](https:
 
 - **Connect a Monome grid device**, and select it in `SYSTEM > GRID`.
 - **Navigate to the ninth example** with `code > tutorial > 9_grid.lua`.
-- **Send it to the device** by clicking on the play button to the top right of the Maiden window.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Touch a button on the grid** and watch it light up on the Norns.
 - **Move the light across the monome** by turning the knobs on the Norns.
 - **Change the brightness** by pressing the buttons on the Norns.

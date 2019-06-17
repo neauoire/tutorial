@@ -146,6 +146,7 @@ p_amp_in.time = refresh_rate
 p_amp_in.callback = function(val) 
   print(val)
 end
+p_amp_in:start()
 ```
 
 ### Available polls

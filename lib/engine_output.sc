@@ -26,6 +26,11 @@ Engine_OutputTutorial : CroneEngine {
       Synth("PolyPerc", [\out, context.out_b, \freq,val,\pw,pw,\amp,amp,\cutoff,cutoff,\gain,gain,\release,release], target:pg);
     });
 
+    this.addCommand("noteOn", "f", { arg msg;
+      var val = msg[1];
+      Synth("PolyPerc", [\out, context.out_b, \freq,val,\pw,pw,\amp,amp,\cutoff,cutoff,\gain,gain,\release,release], target:pg);
+    });
+
     this.addCommand("amp", "f", { arg msg;
       amp = msg[1];
     });

@@ -24,7 +24,7 @@ function init()
 end
 
 function is_compatible()
-  return engine['hz'] ~= nil
+  return engine['noteOn'] ~= nil
 end
 
 function get_engine_id()
@@ -39,9 +39,20 @@ end
 
 function select_next_engine()
   target_id = (get_engine_id() + 1)
+  if target_id > #engine.names then return end
   next_name = engine.names[target_id]
   print('Loading '..next_name)
   engine.load(next_name, on_engine_load)
+  engine.name = next_name
+end
+
+function select_prev_engine()
+  target_id = (get_engine_id() - 1)
+  if target_id < 1 then return end
+  prev_name = engine.names[target_id]
+  print('Loading '..prev_name)
+  engine.load(prev_name, on_engine_load)
+  engine.name = prev_name
 end
 
 function on_engine_load()
@@ -63,6 +74,9 @@ function key(id,state)
   update()
   if id == 3 and state == 1 then
     select_next_engine()
+  end
+  if id == 2 and state == 1 then
+    select_prev_engine()
   end
 end
 

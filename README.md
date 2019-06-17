@@ -138,16 +138,23 @@ In [Maiden](http://norns.local/maiden/), look at the [sixth example file](https:
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/6_input.png?raw=true' width='450'/>
 
-To receive the audio signal, you need to start polling with `_norns.poll_start_vu()`, and bind the callback function `mix.vu` like `norns.vu = mix.vu`.
+To receive the audio signal, you need to start polling with `poll.set("amp_in_l")`, and bind a callback function to `p_amp_in.callback`.
 
 ```
-mix.vu = function(in1,in2,out1,out2)
-  signal.in1 = in1
-  signal.in2 = in2
-  signal.out1 = out1 
-  signal.out2 = out2
+p_amp_in = poll.set("amp_in_l")
+p_amp_in.time = refresh_rate
+p_amp_in.callback = function(val) 
+  print(val)
 end
 ```
+
+### Available polls
+
+- `amp_in_l` / `amp_in_r`
+- `amp_out_l` / `amp_out_r`
+- `cpu_avg` / `cpu_peak`
+- `pitch_in_l` / `pitch_in_r`
+- `tape_play_pos` / `tape_rec_dur`
 
 ## Midi
 

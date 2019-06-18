@@ -223,7 +223,7 @@ In [Maiden](http://norns.local/maiden/), look at the [tenth example file](https:
 - **Navigate to the tenth example** with `code > tutorial > A_engine.lua`.
 - **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Press the keys** to cycle through all the available engines.
-- **Compatible engines to .noteOn** will display as compatible.
+- **Engines with the .noteOn method** will display as compatible.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/A_engine.png?raw=true' width='450'/>
 

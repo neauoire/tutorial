@@ -11,6 +11,7 @@ engine.name = 'OutputTutorial'
 
 local candidates = {}
 local viewport = { width = 128, height = 64, frame = 0 }
+local load_lock = false
 
 -- Main
 
@@ -20,7 +21,7 @@ function init()
   screen.aa(0)
   screen.line_width(1)
   -- Render
-  update()
+  redraw()
 end
 
 function is_compatible()
@@ -41,37 +42,35 @@ function select_next_engine()
   target_id = (get_engine_id() + 1)
   if target_id > #engine.names then return end
   next_name = engine.names[target_id]
-  print('Loading '..next_name)
-  engine.load(next_name, on_engine_load)
-  engine.name = next_name
+  select_engine(next_name)
 end
 
 function select_prev_engine()
   target_id = (get_engine_id() - 1)
   if target_id < 1 then return end
   prev_name = engine.names[target_id]
-  print('Loading '..prev_name)
-  engine.load(prev_name, on_engine_load)
-  engine.name = prev_name
+  select_engine(prev_name)
+end
+
+function select_engine(name)
+  print('Loading '..name)
+  load_lock = true
+  engine.name = name
+  engine.load(engine.name, on_engine_load)
+  redraw()
 end
 
 function on_engine_load()
   print('Loaded '..engine.name)
-  update()
-end
-
-function update()
+  load_lock = false
+  engine.list_commands()
   redraw()
-end
-
-function engineLoadedCallback() 
-   engine.list_commands()
 end
 
 -- Interactions
 
 function key(id,state)
-  update()
+  if load_lock == true then print('Please wait') ; return end
   if id == 3 and state == 1 then
     select_next_engine()
   end
@@ -81,7 +80,8 @@ function key(id,state)
 end
 
 function enc(id,delta)
-  update()
+  if load_lock == true then print('Please wait') ; return end
+  redraw()
 end
 
 -- Render
@@ -93,6 +93,13 @@ function draw_frame()
 end
 
 function draw_labels()
+  line_height = 8
+  if load_lock == true then
+    screen.level(15)
+    screen.move(30,viewport.height - (line_height * 1))
+    screen.text('Loading..')
+    return
+  end
   line_height = 8
   screen.level(5)
   screen.move(5,viewport.height - (line_height * 1))
@@ -113,6 +120,12 @@ function draw_labels()
   screen.text(engine.name)
   screen.move(30,viewport.height - (line_height * 3))
   screen.text(get_engine_id()..'/'..#engine.names)
+end
+
+function modal_wait()
+  screen.rect(10,10,40,40)
+  screen.stroke()
+  screen.update()
 end
 
 function redraw()

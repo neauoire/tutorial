@@ -237,4 +237,12 @@ function select_engine(name)
 end
 ```
 
+## Useful Links
+
+- [Help Thread](https://llllllll.co/t/norns-help/14016/), support community.
+- [Scripting Thread](https://llllllll.co/t/norns-scripting/14120/), libraries community.
+- [Development Thread](https://llllllll.co/t/norns-development/14073/), tools community.
+- [API docs](https://monome.github.io/norns/doc/index.html), documentation.
+- [Repository](https://github.com/monome/norns), source files.
+
 I hope you enjoyed these simple examples, **good luck**!

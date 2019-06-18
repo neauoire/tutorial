@@ -216,4 +216,25 @@ g:led(1,2,15)
 g:refresh()
 ```
 
+## Engine
+
+In [Maiden](http://norns.local/maiden/), look at the [tenth example file](https://github.com/neauoire/tutorial/blob/master/A_engine.lua) of this tutorial.
+
+- **Navigate to the tenth example** with `code > tutorial > A_engine.lua`.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
+- **Press the keys** to cycle through all the available engines.
+- **Compatible engines to .noteOn** will display as compatible.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/A_engine.png?raw=true' width='450'/>
+
+Engines can be swapped within a lua script by using `engine.name = name`, and `engine.load(name, callback)`. This allows to create projects that can alternate between sound engines. You can test for an available `noteOn` method with `engine['noteOn'] ~= nil`, once the engine loading is complete.
+
+```
+function select_engine(name)
+  print('Selecting '..name)
+  engine.name = name
+  engine.load(engine.name, on_engine_load)
+end
+```
+
 I hope you enjoyed these simple examples, **good luck**!

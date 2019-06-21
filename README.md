@@ -218,7 +218,7 @@ g:refresh()
 
 ## Include
 
-In [Maiden](http://norns.local/maiden/), look at the [tenth example file](https://github.com/neauoire/tutorial/blob/master/A_inlcude.lua) of this tutorial.
+In [Maiden](http://norns.local/maiden/), look at the [tenth example file](https://github.com/neauoire/tutorial/blob/master/A_include.lua) of this tutorial.
 
 - **Navigate to the tenth example** with `code > tutorial > A_include.lua`.
 - **Run the script** by clicking on the play button to the top right of the Maiden window.
@@ -237,6 +237,27 @@ return {
 -- main script
 local target = include('lib/target')
 print(target.value)
+```
+
+## Parameters
+
+In [Maiden](http://norns.local/maiden/), look at the [eleventh example file](https://github.com/neauoire/tutorial/blob/master/B_parameters.lua) of this tutorial.
+
+- **Navigate to the tenth example** with `code > tutorial > B_parameters.lua`.
+- **Run the script** by clicking on the play button to the top right of the Maiden window.
+- **Press the leftmost key**, rotate the leftmost knobs to the right, to see and modify the available parameters.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/B_parameters.png?raw=true' width='450'/>
+
+New parameters can be added with `params:add`, and read with `params:get`.
+
+```
+-- Add
+params:add{type = "number", id = "number", name = "Number", min = 1, max = 48, default = 4}
+params:add{type = "option", id = "option", name = "Option", options = {'yes','no'}, default = 1}
+
+-- Read
+print(params:get("number"))
 ```
 
 ## Useful Links

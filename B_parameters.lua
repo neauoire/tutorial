@@ -9,6 +9,8 @@
 
 local viewport = { width = 128, height = 64 }
 local focus = { x = 0, y = 0 }
+local options = {"Cyan", "Magenta", "Yellow", "Black"}
+local actions = {"Yes", "No"}
 
 -- Main
 
@@ -22,6 +24,9 @@ function init()
   focus.y = viewport.height/2
   -- Render
   redraw()
+  params:add{type = "number", id = "number", name = "Number", min = 1, max = 48, default = 4}
+  params:add{type = "option", id = "option", name = "Option", options = options, default = 1}
+  params:add{type = "option", id = "action", name = "Action", options = actions, default = 1, action=function(x) print('selection:'..x) end}
 end
 
 -- Render
@@ -31,21 +36,30 @@ function draw_frame()
   screen.stroke()
 end
 
-function draw_crosshair()
-  screen.move(focus.x,focus.y - 4)
-  screen.line(focus.x,focus.y - 2)
-  screen.move(focus.x - 4,focus.y)
-  screen.line(focus.x - 2,focus.y)
-  screen.move(focus.x,focus.y + 3)
-  screen.line(focus.x,focus.y + 1)
-  screen.move(focus.x + 3,focus.y)
-  screen.line(focus.x + 1,focus.y)
-  screen.stroke()
+function draw_labels()
+  line_height = 8
+  -- 
+  screen.level(5)
+  screen.move(5,viewport.height - (line_height * 1))
+  screen.text('number')
+  screen.move(5,viewport.height - (line_height * 2))
+  screen.text('option')
+  screen.move(5,viewport.height - (line_height * 3))
+  screen.text('action')
+  -- 
+  screen.level(15)
+  screen.move(40,viewport.height - (line_height * 1))
+  screen.text(params:get("number"))
+  screen.move(40,viewport.height - (line_height * 2))
+  screen.text(options[params:get("option")])
+  screen.move(40,viewport.height - (line_height * 3))
+  screen.text(actions[params:get("action")])
+  screen.fill()
 end
 
 function redraw()
   screen.clear()
   draw_frame()
-  draw_crosshair()
+  draw_labels()
   screen.update()
 end

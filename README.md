@@ -241,9 +241,12 @@ print(target.value)
 
 ## Useful Links
 
-- [Help Thread](https://llllllll.co/t/norns-help/14016/), support community.
-- [Scripting Thread](https://llllllll.co/t/norns-scripting/14120/), libraries community.
-- [Development Thread](https://llllllll.co/t/norns-development/14073/), tools community.
+- [Help Thread](https://llllllll.co/t/norns-help/14016), support community.
+- [Scripting Thread](https://llllllll.co/t/norns-scripting/14120), libraries community.
+- [Development Thread](https://llllllll.co/t/norns-development/14073), tools community.
+- [Supercollider Thread](https://llllllll.co/t/norns-crone-supercollider/14616), engine community.
+- [Ideas Thread](https://llllllll.co/t/norns-ideas/17625), community suggestion.
+- [Sketches Thread](https://llllllll.co/t/norns-ideas/17625), snippets community.
 - [API docs](https://monome.github.io/norns/doc/index.html), documentation.
 - [Repository](https://github.com/monome/norns), source files.
 

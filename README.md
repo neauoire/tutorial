@@ -39,7 +39,14 @@ In [Maiden](http://norns.local/maiden/), reload the window to make sure the tuto
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/1_basics.png?raw=true' width='450'/>
 
-You have run your first Norns script, from Github, via Maiden.
+You have run your first Norns script, from Github, via Maiden. The basic functions are as follow
+
+```
+function init() # On launch
+function key(id,state) # On key press
+function enc(id,delta) # On knob turn
+function cleanup() # On Quit
+```
 
 ## Interface
 

@@ -31,3 +31,9 @@ function redraw()
   screen.clear()
   screen.update()
 end
+
+-- Executed on script close/change/quit
+
+function cleanup()
+  print('cleanup')
+end

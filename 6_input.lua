@@ -59,7 +59,6 @@ end
 -- Controls
 
 function key(id,state)
-  print('key',id,state)
   if state == 0 then return end
   if id == 2 or id == 3 then
     if controls.amp == 1 then
@@ -72,7 +71,6 @@ function key(id,state)
 end
 
 function enc(id,delta)
-  print('enc',id,delta)
   controls.amp = clamp(controls.amp + (delta/10), 0.1, 1)
   update()
 end

@@ -33,7 +33,6 @@ end
 -- Interactions
 
 function key(id,state)
-  print('key',id,state)
   if state == 1 and midi_signal then
     midi_signal.note_on(60,127)
   elseif midi_signal then
@@ -43,7 +42,6 @@ function key(id,state)
 end
 
 function enc(id,delta)
-  print('enc',id,delta)
   redraw()
 end
 

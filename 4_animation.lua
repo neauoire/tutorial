@@ -25,20 +25,17 @@ function init()
 end
 
 function reset()
-  print('reset')
   amplitude = 10
 end
 
 -- Interactions
 
 function key(id,state)
-  print('key',id,state)
   reset()
   redraw()
 end
 
 function enc(id,delta)
-  print('enc',id,delta)
   if id == 2 then
     amplitude = clamp(amplitude + (delta/2),0,20)
   else

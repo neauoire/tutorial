@@ -26,7 +26,6 @@ function init()
 end
 
 function reset()
-  print('reset')
   focus.x = viewport.width/2
   focus.y = viewport.height/2
 end
@@ -34,13 +33,11 @@ end
 -- Interactions
 
 function key(id,state)
-  print('key',id,state)
   reset()
   redraw()
 end
 
 function enc(id,delta)
-  print('enc',id,delta)
   if id == 2 then
     focus.x = clamp(focus.x + delta,6,123)
   elseif id == 3 then

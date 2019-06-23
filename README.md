@@ -230,10 +230,11 @@ In [Maiden](http://norns.local/maiden/), look at the [tenth example file](https:
 - **Navigate to the tenth example** with `code > tutorial > A_include.lua`.
 - **Run the script** by clicking on the play button to the top right of the Maiden window.
 - **Rotate the knobs** to change the position values of the included file.
+- **Press the key** to select a different view.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/A_include.png?raw=true' width='450'/>
 
-Including files with `local view1 = include('lib/view1')`, will first look in the directory of the current script. This allows using relative paths to use libraries local to the script. The returned value of the included script will be available in your main script file.
+Including files with `local view = include('lib/view')`, will first look in the directory of the current script. This allows using relative paths to use libraries local to the script. The returned value of the included script will be available in your main script file.
 
 ```
 -- lib/target.lua
@@ -244,6 +245,18 @@ return {
 -- main script
 local target = include('lib/target')
 print(target.value)
+```
+
+In lua, you can create a new object and methods like the following snippet, notice how the `self` parameter is omitted when using the colon character.
+
+```
+obj = { c = 4 }
+
+obj.add = function(self,a,b) 
+  return a + b 
+end
+
+obj:add(2,3) -- 9
 ```
 
 ## Parameters

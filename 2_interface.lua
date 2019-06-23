@@ -13,7 +13,6 @@ local focus = { x = 0, y = 0 }
 -- Main
 
 function init()
-  print('init')
   -- Render Style
   screen.level(15)
   screen.aa(0)
@@ -23,16 +22,6 @@ function init()
   focus.y = viewport.height/2
   -- Render
   redraw()
-end
-
--- Interactions
-
-function key(id,state)
-  print('key',id,state)
-end
-
-function enc(id,delta)
-  print('enc',id,delta)
 end
 
 -- Render
@@ -55,7 +44,6 @@ function draw_crosshair()
 end
 
 function redraw()
-  print('redraw')
   screen.clear()
   draw_frame()
   draw_crosshair()

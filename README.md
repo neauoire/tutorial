@@ -247,13 +247,13 @@ local target = include('lib/target')
 print(target.value)
 ```
 
-In lua, you can create a new object and methods like the following snippet, notice how the `self` parameter is omitted when using the colon character.
+In lua, you can create a new **objects and methods** as described the following snippet, notice how the `self` parameter is omitted when using the colon character before the method name.
 
 ```
 obj = { c = 4 }
 
 obj.add = function(self,a,b) 
-  return a + b 
+  return a + b + self.c
 end
 
 obj:add(2,3) -- 9

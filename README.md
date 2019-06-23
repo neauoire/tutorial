@@ -247,7 +247,7 @@ local target = include('lib/target')
 print(target.value)
 ```
 
-In lua, you can create a new **objects and methods** as described the following snippet, notice how the `self` parameter is omitted when using the colon character before the method name.
+In lua, you can create new **objects and methods** as shown in the following snippet, notice how the `self` parameter is omitted when using the colon character before the method name.
 
 ```
 obj = { c = 4 }

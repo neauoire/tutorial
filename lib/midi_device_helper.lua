@@ -30,7 +30,7 @@ Midi_Device_Helper.set_output = function(x)
 end
 
 Midi_Device_Helper.set_input = function(x)
-  print('Midi Device Helper','Set output device: '..Midi_Device_Helper:get_input_name())
+  print('Midi Device Helper','Set input device: '..Midi_Device_Helper:get_input_name())
   Midi_Device_Helper.input = midi.connect(params:get("midi_input"))
 end
 

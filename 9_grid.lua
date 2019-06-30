@@ -109,7 +109,7 @@ end
 
 function draw_label()
   screen.level(15)
-  line_height = 8
+  local line_height = 8
   screen.move(5,viewport.height - (line_height * 1))
   if is_connected() ~= true then
     screen.text('Grid is not connected.')

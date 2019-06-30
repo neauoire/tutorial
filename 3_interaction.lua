@@ -67,8 +67,7 @@ function draw_crosshair()
 end
 
 function draw_position()
-  line_height = 8
-  screen.move(5,viewport.height - (line_height * 1))
+  screen.move(5,viewport.height - (8 * 1))
   screen.text(math.floor(focus.x)..','..math.floor(focus.y))
 end
 

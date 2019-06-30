@@ -69,7 +69,7 @@ function draw_frame()
 end
 
 function draw_labels()
-  line_height = 8
+  local line_height = 8
   screen.level(1)
   screen.move(5,viewport.height - (line_height * 1))
   screen.text('note')
@@ -82,7 +82,7 @@ function draw_labels()
 end
 
 function draw_event(event)
-  line_height = 8
+  local line_height = 8
   screen.level(15)
   if event.note then
     screen.move(30,viewport.height - (line_height * 1))

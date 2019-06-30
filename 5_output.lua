@@ -81,10 +81,9 @@ function draw_crosshair()
 end
 
 function draw_freq()
-  line_height = 8
-  screen.move(5,viewport.height - (line_height * 1))
+  screen.move(5,viewport.height - (8 * 1))
   screen.text(get_freq()..'hz')
-  screen.move(5,viewport.height - (line_height * 2))
+  screen.move(5,viewport.height - (8 * 2))
   screen.text(clamp(focus.y/viewport.height,0.05,4)..'ms')
 end
 

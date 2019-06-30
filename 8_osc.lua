@@ -67,7 +67,7 @@ function draw_labels()
 end
 
 function draw_msg(msg)
-  line_height = 8
+  local line_height = 8
   screen.level(15)
   if msg.path then
     screen.move(30,viewport.height - (line_height * 1))

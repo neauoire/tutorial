@@ -283,32 +283,22 @@ print(params:get("number"))
 In [Maiden](http://norns.local/maiden/), look at the [softcut example file](https://github.com/neauoire/tutorial/blob/master/C_softcut.lua) of this tutorial.
 
 - **Navigate to the example** and run the script.
-- **Fade between the input and the recorded loop**, by rotating the leftmost knob.
+- **Connect a sound source**, into the 4th input(Input 1) from the left of the Norns.
+- **Fade between the sound source and the recorded loop**, by rotating the leftmost knob.
 - **Change the offset of the recorded loop**, by rotating the second knob.
 - **Change the length of recorded loop**, by rotating the rightmost knob.
 - **Change the playback speed**, by pressing the rightmost buttons.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/C_softcut.png?raw=true' width='450'/>
 
-Softcut is a recording tool built into the Norns, it makes it easy to record and play samples at various speed. Generally, the `softcut` methods will operate on a voice, softcut has a maximum of 6 voices, so the functions are always in the format of `.method(voice_id,value)`. For example, here's the basic setup:
+[Softcut](https://monome.github.io/norns/doc/modules/softcut.html) is a recording tool built into the Norns, it makes it easy to record and play samples at various speed. Generally, the `softcut` methods will operate on a voice, softcut has a maximum of 6 voices, so the functions are always in the format of `.method(voice_id,value)`. For example, here a few methods used in this example file:
 
-```
-softcut.enable(1,1)
-softcut.buffer(1,1)
-softcut.level(1,1.0)
-softcut.loop(1,1)
-softcut.loop_start(1,1)
-softcut.loop_end(1,2)
-softcut.position(1,1)
-softcut.play(1,1)
-```
+- `softcut.fade_time(1,0.25)`,  **set the fade in/out** length of the sample, of `voice1`, to `0.25`.
+- `softcut.rate(1,2)`, **set the rate(speed)**, of the sample to play, at speed `200%`, also `-2` would play in reverse.
+- `softcut.loop_start(2,0.5)`, **set the offset** of the sample, of `voice2`, to `0.5`. 
+- `softcut.loop_end(3,4)`, **set the limit** of the sample, of `voice3`, to `4`.
 
-Other useful methods are:
-
-- `softcut.fade_time(1,0.25)`, set the fadein/fadeout length of the sample, of `voice1`, to `0.25`.
-- `softcut.rate(1,2)`, set the rate(speed) of the sample to play, at speed `200%`, also `-2` would play in reverse.
-- `softcut.loop_start(2,0.5)`, set the starting time of the sample, of `voice2`, to `0.5`. 
-- `softcut.loop_end(3,4)`, set the limit of the sample, of `voice3`, to `4`.
+You can also explore each one with the [Softcut Studies](https://llllllll.co/t/norns-softcut-studies/23585).
 
 ## Useful Commands
 

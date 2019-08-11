@@ -227,8 +227,7 @@ g:refresh()
 
 In [Maiden](http://norns.local/maiden/), look at the [tenth example file](https://github.com/neauoire/tutorial/blob/master/A_include.lua) of this tutorial.
 
-- **Navigate to the tenth example** with `code > tutorial > A_include.lua`.
-- **Run the script** by clicking on the play button to the top right of the Maiden window.
+- **Navigate to the example** and run the script.
 - **Rotate the knobs** to change the position values of the included file.
 - **Press the key** to select a different view.
 
@@ -263,8 +262,7 @@ obj:add(2,3) -- 9
 
 In [Maiden](http://norns.local/maiden/), look at the [eleventh example file](https://github.com/neauoire/tutorial/blob/master/B_parameters.lua) of this tutorial.
 
-- **Navigate to the tenth example** with `code > tutorial > B_parameters.lua`.
-- **Run the script** by clicking on the play button to the top right of the Maiden window.
+- **Navigate to the example** and run the script.
 - **Press the leftmost key**, rotate the leftmost knobs to the right, to see and modify the available parameters.
 
 <img src='https://raw.githubusercontent.com/neauoire/tutorial/master/B_parameters.png?raw=true' width='450'/>
@@ -279,6 +277,43 @@ params:add{type = "option", id = "option", name = "Option", options = {'yes','no
 -- Read
 print(params:get("number"))
 ```
+
+## Softcut
+
+In [Maiden](http://norns.local/maiden/), look at the [softcut example file](https://github.com/neauoire/tutorial/blob/master/C_softcut.lua) of this tutorial.
+
+- **Navigate to the example** and run the script.
+- **Fade between the input and the recorded loop**, by rotating the leftmost knob.
+- **Change the offset of the recorded loop**, by rotating the second knob.
+- **Change the length of recorded loop**, by rotating the rightmost knob.
+- **Change the playback speed**, by pressing the rightmost buttons.
+
+<img src='https://raw.githubusercontent.com/neauoire/tutorial/master/C_softcut.png?raw=true' width='450'/>
+
+Softcut is a recording tool built into the Norns, it makes it easy to record and play samples at various speed. Generally, the `softcut` methods will operate on a voice, softcut has a maximum of 6 voices, so the functions are always in the format of `.method(voice_id,value)`. For example, here's the basic setup:
+
+```
+softcut.enable(1,1)
+softcut.buffer(1,1)
+softcut.level(1,1.0)
+softcut.loop(1,1)
+softcut.loop_start(1,1)
+softcut.loop_end(1,2)
+softcut.position(1,1)
+softcut.play(1,1)
+```
+
+Other useful methods are:
+
+- `softcut.fade_time(1,0.25)`, set the fadein/fadeout length of the sample, of `voice1`, to `0.25`.
+- `softcut.rate(1,2)`, set the rate(speed) of the sample to play, at speed `200%`, also `-2` would play in reverse.
+- `softcut.loop_start(2,0.5)`, set the starting time of the sample, of `voice2`, to `0.5`. 
+- `softcut.loop_end(3,4)`, set the limit of the sample, of `voice3`, to `4`.
+
+## Useful Commands
+
+- If you need to restart the device, type `;restart` in Maiden.
+- If you want to take a screenshot, type `s_export_png("/home/we/screenshot.png")` in Maiden.
 
 ## Useful Links
 

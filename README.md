@@ -305,6 +305,22 @@ You can also explore each one with the [Softcut Studies](https://llllllll.co/t/n
 - If you need to restart the device, type `;restart` in Maiden.
 - If you want to take a screenshot, type `s_export_png("/home/we/screenshot.png")` in Maiden.
 
+## Without WIFI
+
+Connect the device via USB, wWhere (tab) appears hit the `tab` key to autocomplete the serial number, then press `enter`.
+
+```
+screen /dev/tty.usb(tab) 115200
+```
+
+Once logged in with `we/sleep`, type:
+
+```
+systemctl stop norns-matron
+cd norns
+build/matron/matron
+```
+
 ## Useful Links
 
 - [Help Thread](https://llllllll.co/t/norns-help/14016), support community.

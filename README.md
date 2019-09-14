@@ -317,8 +317,7 @@ Once logged in with `we/sleep`, type:
 
 ```
 systemctl stop norns-matron
-cd norns
-build/matron/matron
+~/norns/build/matron/matron
 ```
 
 ## Useful Links

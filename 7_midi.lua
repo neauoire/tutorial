@@ -78,26 +78,38 @@ function draw_labels()
   screen.move(5,viewport.height - (line_height * 3))
   screen.text('vel')
   screen.move(5,viewport.height - (line_height * 4))
+  screen.text('value')
+  screen.move(5,viewport.height - (line_height * 5))
   screen.text('type')
 end
 
 function draw_event(event)
   local line_height = 8
   screen.level(15)
+  screen.move(30,viewport.height - (line_height * 1))
   if event.note then
-    screen.move(30,viewport.height - (line_height * 1))
     screen.text(msg.note)
+  else
+    screen.text('-')
   end
   if event.ch then
     screen.move(30,viewport.height - (line_height * 2))
     screen.text(msg.ch)
   end
+  screen.move(30,viewport.height - (line_height * 3))
   if event.vel then
-    screen.move(30,viewport.height - (line_height * 3))
     screen.text(msg.vel)
+  else
+    screen.text('-')
+  end
+  screen.move(30,viewport.height - (line_height * 4))
+  if event.val then
+    screen.text(msg.val)
+  else
+    screen.text('-')
   end
   if event.type then
-    screen.move(30,viewport.height - (line_height * 4))
+    screen.move(30,viewport.height - (line_height * 5))
     screen.text(msg.type)
   end
 end
